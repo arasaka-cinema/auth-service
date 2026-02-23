@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@arasaka-cinema/common": "^1.0.3",
-    "@arasaka-cinema/contracts": "^1.0.6",
+    "@arasaka-cinema/contracts": "^1.0.7",
     "@arasaka-cinema/core": "^1.0.4",
     "@arasaka-cinema/passport": "^1.0.1",
     "@grpc/grpc-js": "^1.14.3",
