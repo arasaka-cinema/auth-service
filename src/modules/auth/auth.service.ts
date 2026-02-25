@@ -13,6 +13,7 @@ import { Account } from '@prisma/generated/client'
 import type { AllConfigs } from '@/config'
 import { AuthRepository } from '@/modules/auth/auth.repository'
 import { OtpService } from '@/modules/otp/otp.service'
+import { UserRepository } from '@/shared/repositories'
 
 @Injectable()
 export class AuthService {
@@ -23,7 +24,8 @@ export class AuthService {
 		private readonly configService: ConfigService<AllConfigs>,
 		private readonly authRepository: AuthRepository,
 		private readonly otpService: OtpService,
-		private readonly passportService: PassportService
+		private readonly passportService: PassportService,
+		private readonly userRepository: UserRepository
 	) {
 		this.ACCESS_TOKEN_TTL = this.configService.get('passport.accessTtl', {
 			infer: true
@@ -39,8 +41,8 @@ export class AuthService {
 		let account: Account | null
 
 		if (type === 'phone')
-			account = await this.authRepository.findByPhone(identifier)
-		else account = await this.authRepository.findByEmail(identifier)
+			account = await this.userRepository.findByPhone(identifier)
+		else account = await this.userRepository.findByEmail(identifier)
 
 		if (!account) {
 			account = await this.authRepository.create({
@@ -69,8 +71,8 @@ export class AuthService {
 		let account: Account | null
 
 		if (type === 'phone') {
-			account = await this.authRepository.findByPhone(identifier)
-		} else account = await this.authRepository.findByEmail(identifier)
+			account = await this.userRepository.findByPhone(identifier)
+		} else account = await this.userRepository.findByEmail(identifier)
 
 		if (!account)
 			throw new RpcException({

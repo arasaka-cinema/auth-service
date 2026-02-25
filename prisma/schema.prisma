@@ -42,6 +42,7 @@ model PendingContactChange {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
+  @@unique([accountId, type])
   @@map("pending_contact_changes")
 }
 

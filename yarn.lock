@@ -67,10 +67,10 @@
   dependencies:
     "@trivago/prettier-plugin-sort-imports" "^6.0.2"
 
-"@arasaka-cinema/contracts@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@arasaka-cinema/contracts/-/contracts-1.0.7.tgz#8ef8c33fe122b1fcbf60e504f901b4e86b41cd84"
-  integrity sha512-mPx/PGGOfWcrGr1/L/c5ovC+7wATj2eJr6J7csKAbcGGTMnN0L1gBD/kKxksnwmChovTNfAAxdp9ExDWPIHsOg==
+"@arasaka-cinema/contracts@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@arasaka-cinema/contracts/-/contracts-1.0.8.tgz#be6a4849433f087c49beb9a5187d6507b8c417d8"
+  integrity sha512-N0COOoYlWv4lC3H/hTxCO0rQUjBHKWk6n+hHfxjgcTdgSUruVqJQtnYJS55FPkBG8MAZBRMd4ZpaLzEZx/s+ZA==
   dependencies:
     "@arasaka-cinema/core" "^1.0.4"
     "@nestjs/microservices" "^11.1.12"
